@@ -15,7 +15,7 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
   render: function() {
     this.$el.html(this.template());
     if (this.collection.models.length > 0) {
-      this.collection.models.forEach(this.addEmployee.bind(this));
+      this.collection.forEach(this.addEmployee.bind(this));
     }
 
     return this;

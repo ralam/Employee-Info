@@ -1,5 +1,10 @@
 EmployeeInfo.Collections.Employees = Backbone.Collection.extend({
   url: 'api/employees',
+  model: EmployeeInfo.Models.Employee,
+
+  parse: function(data) {
+    return data.employees
+  },
 
   getOrFetch: function (id) {
     var collection = this;

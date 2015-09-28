@@ -14,6 +14,14 @@ class Api::EmployeesController < ApplicationController
   end
 
   def show
+    begin
+      @employee = Employee.find(params[:id])
+      if @employee
+        render :show
+      end
+    rescue
+      render json: ["That employee doesn't exist."], status: 404
+    end
   end
 
   def index

@@ -5,7 +5,7 @@ EmployeeInfo.Views.EmployeeRow = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({employee: this.model}))
-
+    console.log(this.model);
     return this
   }
 })
