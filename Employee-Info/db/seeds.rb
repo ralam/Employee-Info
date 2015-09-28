@@ -5,7 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
 Employee.create(birth_date: '1953-09-02',first_name: 'Georgi', last_name: 'Facello', gender: 'M',hire_date: '1986-06-26')
 Employee.create(birth_date: '1964-06-02',first_name: 'Bezalel', last_name: 'Simmel', gender: 'F',hire_date: '1985-11-21')
 Employee.create(birth_date: '1959-12-03',first_name: 'Parto', last_name: 'Bamford', gender: 'M',hire_date: '1986-08-28')
