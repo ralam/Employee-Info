@@ -1,4 +1,4 @@
-EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeViews.extend({
+EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
   template: JST['employees/index'],
 
   initialize: function () {

@@ -1,9 +1,9 @@
-EmployeeInfo.Collection.Employees = Backbone.Collection.extend({
+EmployeeInfo.Collections.Employees = Backbone.Collection.extend({
   url: 'api/employees',
 
   getOrFetch: function (id) {
-    var collection: this;
-    var employee: this.get(id);
+    var collection = this;
+    var employee = this.get(id);
 
     if (employee) {
       employee.fetch();
@@ -19,3 +19,5 @@ EmployeeInfo.Collection.Employees = Backbone.Collection.extend({
     }
   }
 })
+
+EmployeeInfo.Collections.employees = new EmployeeInfo.Collections.Employees();

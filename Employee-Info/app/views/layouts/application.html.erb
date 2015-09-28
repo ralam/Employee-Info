@@ -11,6 +11,7 @@
 <% if @current_user %>
   <%= link_to "Sign Out", session_url, method: :delete %>
 <% end %>
+<div class="content"></div>
 
 <%= yield %>
 

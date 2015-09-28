@@ -1,17 +1,17 @@
 EmployeeInfo.Routers.Router = Backbone.Router.extend({
-  intitialze: function (options) {
+  initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.employees = options.employees
   },
 
   routes: {
-
+    'index': 'index'
   },
 
   index: function (){
     this.employees.fetch();
 
-    var indexView = new EmployeeInfo.Views.Index({
+    var indexView = new EmployeeInfo.Views.EmployeeIndex({
       collection: this.employees
     });
 
