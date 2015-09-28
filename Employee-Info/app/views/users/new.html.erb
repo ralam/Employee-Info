@@ -1,5 +1,10 @@
 <form class="session form-inline" action="<%= users_url %>" method="post">
   <h3>Create an account</h3>
+  <% if flash[:errors] %>
+    <div class="alert alert-danger" role="alert">
+      <%= render "layouts/errors" %>
+    </div>
+  <% end %>
   <input
     type="hidden"
     name="authenticity_token"
