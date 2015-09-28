@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true}
 
   def self.find_by_credentials(username, password)
-    user = User.find_by(email: email)
+    user = User.find_by(username: username)
     return nil unless user && user.valid_password?
     user
   end
