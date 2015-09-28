@@ -8,10 +8,10 @@
 </head>
 <body>
 
-<% if @current_user %>
+<% if signed_in? %>
   <%= link_to "Sign Out", session_url, method: :delete %>
 <% end %>
-<div class="content"></div>
+
 
 <%= yield %>
 

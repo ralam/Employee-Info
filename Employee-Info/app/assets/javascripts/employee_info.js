@@ -11,7 +11,3 @@ window.EmployeeInfo = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  EmployeeInfo.initialize();
-});
