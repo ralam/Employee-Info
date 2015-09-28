@@ -5,7 +5,6 @@ window.EmployeeInfo = {
   Routers: {},
   initialize: function() {
     Backbone.history.start();
-    alert('Hello from Backbone!');
   }
 };
 
