@@ -1,5 +1,5 @@
 EmployeeInfo.Collection.Employees = Backbone.Collection.extend({
-  url: 'api/employees'
+  url: 'api/employees',
 
   getOrFetch: function (id) {
     var collection: this;
