@@ -6,7 +6,7 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeViews.extend({
   },
 
   addEmployee: function (employee) {
-    var view = new EmployeeInfo.Views.EmployeeShow({
+    var view = new EmployeeInfo.Views.EmployeePreview({
       model: employee
     });
     this.addSubview('#employees', view);
