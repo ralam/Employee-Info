@@ -4,7 +4,8 @@
       <h2>Employee List:</h2>
     </div>
   </div>
-  <table class="table table-striped">
+  <!-- Use two tables so header remains in place while data is scrollable -->
+  <table class="table headers">
     <thead>
       <tr>
         <th class="employee_id">ID</th>
@@ -15,8 +16,17 @@
         <th class="hire_date">Hire Date</th>
       </tr>
     </thead>
-    <tbody id="employees">
-
-    </tbody>
   </table>
+  <div id="table-wrapper">
+    <div id="table-scroll">
+      <table class="table table-striped data">
+        <tbody id="employees">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+<script type="text/javascript">
+
+</script>

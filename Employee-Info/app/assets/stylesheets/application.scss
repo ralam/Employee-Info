@@ -23,3 +23,12 @@ div.employee-table{
   border-radius: 3px;
   margin-bottom: 20px;
 }
+
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height:500px;
+  overflow:auto;
+  margin-top:20px;
+}
