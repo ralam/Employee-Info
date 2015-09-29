@@ -20,7 +20,12 @@ EmployeeInfo.Routers.Router = Backbone.Router.extend({
   },
 
   newEmployee: function(){
-    var newEmployeeView = new EmployeeInfo.Views.EmployeeForm();
+    var employee = new EmployeeInfo.Models.Employee();
+
+    var newEmployeeView = new EmployeeInfo.Views.EmployeeForm({
+      model: employee,
+      collection: this.employees
+    });
 
     this._swapView(newEmployeeView);
   },
