@@ -1,6 +1,6 @@
 EmployeeInfo.Views.EmployeeRow = Backbone.View.extend({
   template: JST['employees/row'],
-  className: 'employee row',
+  className: 'employee',
   tagName: 'tr',
 
   render: function () {
