@@ -5,7 +5,6 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'sync', this.render)
   },
 
-  //Creates an EmployeeRow subview
   addEmployee: function (employee) {
     var view = new EmployeeInfo.Views.EmployeeRow({
       model: employee
@@ -13,7 +12,6 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     this.addSubview('#employees', view);
   },
 
-  //Creates an EmployeeRow subview for each employee
   render: function() {
     this.$el.html(this.template());
     if (this.collection.models.length > 0) {

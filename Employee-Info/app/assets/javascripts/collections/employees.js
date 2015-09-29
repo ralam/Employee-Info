@@ -2,12 +2,10 @@ EmployeeInfo.Collections.Employees = Backbone.Collection.extend({
   url: 'api/employees',
   model: EmployeeInfo.Models.Employee,
 
-  //Get employee data
   parse: function(data) {
     return data.employees
   },
 
-  //Check if employee exists, fetches if true, create and fetches if false
   getOrFetch: function (id) {
     var collection = this;
     var employee = this.get(id);
