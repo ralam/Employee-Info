@@ -11,6 +11,7 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     this.hireDateWidth = $("td.hire_date").width();
     this.tableWidth = $("table.data").width();
     this.windowWidth = $(window).width();
+    $(window).on("resize", this.resizeWidths);
     $(window).on("resize", this.resizeHeaders);
   },
 
@@ -22,8 +23,8 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     this.addSubview('#employees', view);
   },
 
-  //Resize header table cells to match data table
-  resizeHeaders: function () {
+  //Reassign stored window, cell, and table widths
+  resizeWidths: function () {
     this.employeeWidth = $("td.employee_id").width();
     this.birthDateWidth = $("td.birth_date").width();
     this.firstNameWidth = $("td.first_name").width();
@@ -32,6 +33,10 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     this.hireDateWidth = $("td.hire_date").width();
     this.tableWidth = $("table.data").width();
     this.windowWidth = $(window).width();
+  },
+
+  //Resize header table cells to match data table
+  resizeHeaders: function () {
 
     //If window size is over 1300px, resize the header table as well for better experience
     if (this.windowWidth > 1300) {
@@ -68,9 +73,9 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     if (this.collection.models.length > 0) {
       this.collection.forEach(this.addEmployee.bind(this));
     }
-
+    this.resizeWidths();
     this.resizeHeaders();
-
+    
     return this;
   }
 })
