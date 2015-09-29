@@ -8,11 +8,10 @@
 </head>
 <body>
 
-<% if signed_in? %>
-  <%= link_to "Sign Out", session_url, method: :delete %>
-<% end %>
+<!-- render navbar partial -->
+<%= render "layouts/navbar" %>
 
-
+<!-- main page content -->
 <%= yield %>
 
 </body>
