@@ -4,11 +4,11 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render)
     this.employeeWidth = $("td.employee_id").width();
-    this.birthDate = $("td.birth_date").width();
-    this.firstName = $("td.first_name").width();
-    this.lastName = $("td.last_name").width();
-    this.gender = $("td.gender").width();
-    this.hireDate = $("td.hire_date").width();
+    this.birthDateWidh = $("td.birth_date").width();
+    this.firstNameWidth = $("td.first_name").width();
+    this.lastNameWidth = $("td.last_name").width();
+    this.genderWidth = $("td.gender").width();
+    this.hireDateWidth = $("td.hire_date").width();
     this.tableWidth = $("table.data").width();
     this.windowWidth = $(window).width();
     $(window).on("resize", this.resizeHeaders);
@@ -25,12 +25,13 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
   //Resize header table cells to match data table
   resizeHeaders: function () {
     this.employeeWidth = $("td.employee_id").width();
-    this.birthDate = $("td.birth_date").width();
-    this.firstName = $("td.first_name").width();
-    this.lastName = $("td.last_name").width();
-    this.gender = $("td.gender").width();
-    this.hireDate = $("td.hire_date").width();
+    this.birthDateWidth = $("td.birth_date").width();
+    this.firstNameWidth = $("td.first_name").width();
+    this.lastNameWidth = $("td.last_name").width();
+    this.genderWidth = $("td.gender").width();
+    this.hireDateWidth = $("td.hire_date").width();
     this.tableWidth = $("table.data").width();
+    this.windowWidth = $(window).width();
 
     //If window size is over 1300px, resize the header table as well for better experience
     if (this.windowWidth > 1300) {
@@ -45,19 +46,19 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
       width: this.employeeWidth
     });
     $("th.birth_date").css({
-      width: this.birthDate
+      width: this.birthDateWidth
     });
     $("th.first_name").css({
-      width: this.firstName
+      width: this.firstNameWidth
     });
     $("th.last_name").css({
-      width: this.lastName
+      width: this.lastNameWidth
     });
     $("th.gender").css({
-      width: this.gender
+      width: this.genderWidth
     });
     $("th.hire_date").css({
-      width: this.hireDate
+      width: this.hireDateWidth
     });
   },
 
