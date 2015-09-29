@@ -5,7 +5,8 @@ EmployeeInfo.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    'index': 'index'
+    'index': 'index',
+    'employees/new': 'newEmployee'
   },
 
   index: function (){
@@ -16,6 +17,12 @@ EmployeeInfo.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(indexView);
+  },
+
+  newEmployee: function(){
+    var newEmployeeView = new EmployeeInfo.Views.EmployeeForm();
+
+    this._swapView(newEmployeeView);
   },
 
   //Swaps current view with new view, garbage collects old views

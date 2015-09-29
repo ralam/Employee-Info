@@ -1,4 +1,4 @@
-EmployeeInfo.Views.EmployeeNew = Backbone.View.extend({
+EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
   template: JST['employees/new'],
   tagName: 'form',
 
