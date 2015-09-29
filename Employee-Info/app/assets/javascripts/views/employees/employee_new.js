@@ -17,7 +17,7 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
 
     var formData = $(event.currentTarget).serializeJSON();
 
-    this.model.set(projectData);
+    this.model.set(formData);
     this.model.save(formData, {
       success: function(employee) {
         this.collection.add(employee);

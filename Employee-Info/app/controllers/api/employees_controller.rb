@@ -2,6 +2,12 @@ class Api::EmployeesController < ApplicationController
   before_action :require_signed_in!
 
   def create
+    @employee = Employee.new(employee_params)
+    if @employee.save
+      render json: @employee
+    else
+      render json: @employee.errors.full_messages, status: 422
+    end
   end
 
   def new
