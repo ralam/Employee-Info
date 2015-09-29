@@ -18,7 +18,7 @@ EmployeeInfo.Routers.Router = Backbone.Router.extend({
     this._swapView(indexView);
   },
 
-
+  //Swaps current view with new view, garbage collects old views
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
