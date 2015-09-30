@@ -6,7 +6,9 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
   },
 
   events: {
-    'submit' : 'submit'
+    'submit' : 'submit',
+    'click .m-background': 'remove',
+    'click .close': 'preventEventAndRemove'
   },
 
   render: function () {
@@ -17,6 +19,12 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
     }))
 
     return this
+  },
+
+  preventEventAndRemove: function(event) {
+    event.preventDefault();
+
+    this.remove();
   },
 
   submit: function(event) {
