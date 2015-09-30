@@ -27,8 +27,14 @@ div.employee-table{
 #table-wrapper {
   position:relative;
 }
+
 #table-scroll {
   height:500px;
   overflow:auto;
   margin-top:20px;
+}
+
+button.add-employee {
+  float: right;
+  margin-top: 20px;
 }
