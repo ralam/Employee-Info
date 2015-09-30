@@ -10,15 +10,6 @@ class Api::EmployeesController < ApplicationController
     end
   end
 
-  def new
-  end
-
-  def update
-  end
-
-  def edit
-  end
-
   def show
     begin
       @employee = Employee.find(params[:id])
@@ -32,9 +23,6 @@ class Api::EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all
-  end
-
-  def destroy
   end
 
   private

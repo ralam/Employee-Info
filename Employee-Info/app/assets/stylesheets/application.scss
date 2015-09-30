@@ -16,6 +16,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+//Employee table styles
+
 div.employee-table{
   width: 80%;
   padding: 20px;
@@ -38,6 +40,8 @@ button.add-employee {
   float: right;
   margin-top: 20px;
 }
+
+//Modal styles
 
 .m-background {
   background: rgba(92, 88, 88, 0.6);
@@ -64,11 +68,9 @@ button.add-employee {
   margin-bottom: 10%;
 }
 
+//New Employee styles
+
 .new-employee {
   width: 80%;
   margin: 0 auto;
-}
-
-form label {
-  width: 100%;
 }

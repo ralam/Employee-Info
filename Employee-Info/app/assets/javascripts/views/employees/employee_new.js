@@ -21,14 +21,9 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
     return this
   },
 
-  preventEventAndRemove: function(event) {
-    event.preventDefault();
-    this.remove();
-  },
-
   submit: function(event) {
     event.preventDefault();
-
+    //Get form data
     var formData = $(event.currentTarget).find("form").serializeJSON();
     console.log(formData)
     this.model.set(formData);
