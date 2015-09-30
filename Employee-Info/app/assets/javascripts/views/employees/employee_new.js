@@ -1,6 +1,5 @@
 EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
   template: JST['employees/new'],
-  tagName: 'form',
 
   initialize: function () {
     this.errors = [];
@@ -23,8 +22,7 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
 
-    var formData = $(event.currentTarget).serializeJSON();
-
+    var formData = $(event.currentTarget).find("form").serializeJSON();
     this.model.set(formData);
     this.model.save(formData, {
       success: function(employee, response, options) {

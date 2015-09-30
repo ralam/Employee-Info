@@ -38,3 +38,37 @@ button.add-employee {
   float: right;
   margin-top: 20px;
 }
+
+.m-background {
+  background: rgba(92, 88, 88, 0.6);
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  max-height: 100%;
+  position: fixed;
+}
+
+.m-content {
+  z-index: 2;
+  top: 25%;
+  left: 25%;
+  background-color: white;
+  padding: 1pc;
+  border: 1px solid;
+  border-radius: 5px;
+  min-width: 50%;
+  position: absolute;
+  margin-bottom: 10%;
+}
+
+.new-employee {
+  width: 80%;
+  margin: 0 auto;
+}
+
+form label {
+  width: 100%;
+}
