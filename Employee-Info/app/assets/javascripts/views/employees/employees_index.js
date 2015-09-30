@@ -15,6 +15,22 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     $(window).on("resize", this.resizeHeaders);
   },
 
+  events: {
+    "click .add-employee": "renderNewEmployeeForm"
+  },
+
+  //Creates an EmployeeRow subview for each employee
+  render: function() {
+    this.$el.html(this.template());
+    if (this.collection.models.length > 0) {
+      this.collection.forEach(this.addEmployee.bind(this));
+    }
+    this.resizeWidths();
+    this.resizeHeaders();
+
+    return this;
+  },
+
   //Creates an EmployeeRow subview
   addEmployee: function (employee) {
     var view = new EmployeeInfo.Views.EmployeeRow({
@@ -45,7 +61,7 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
       });
     } else {
       // If smaller than 1300px, let Bootstrap handle header table sizing
-      $("table.headers").removeAttr( 'style' );
+      $("table.headers").removeAttr('style');
     }
     $("th.employee_id").css({
       width: this.employeeWidth
@@ -67,15 +83,15 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     });
   },
 
-  //Creates an EmployeeRow subview for each employee
-  render: function() {
-    this.$el.html(this.template());
-    if (this.collection.models.length > 0) {
-      this.collection.forEach(this.addEmployee.bind(this));
-    }
-    this.resizeWidths();
-    this.resizeHeaders();
+  renderNewEmployeeForm: function(event) {
+    var employee = new EmployeeInfo.Models.Employee();
 
-    return this;
+    var newEmployeeView = new EmployeeInfo.Views.EmployeeForm({
+      model: employee,
+      collection: this.collection
+    });
+
+    this.addSubview('.container-fluid', newEmployeeView);
   }
+
 })

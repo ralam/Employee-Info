@@ -8,7 +8,7 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
   events: {
     'submit' : 'submit',
     'click .m-background': 'remove',
-    'click .close': 'preventEventAndRemove'
+    'click .close': 'remove'
   },
 
   render: function () {
@@ -23,7 +23,6 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
 
   preventEventAndRemove: function(event) {
     event.preventDefault();
-
     this.remove();
   },
 
@@ -31,6 +30,7 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
     event.preventDefault();
 
     var formData = $(event.currentTarget).find("form").serializeJSON();
+    console.log(formData)
     this.model.set(formData);
     this.model.save(formData, {
       success: function(employee, response, options) {
