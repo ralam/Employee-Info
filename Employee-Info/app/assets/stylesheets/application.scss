@@ -57,12 +57,12 @@ button.add-employee {
 
 .m-content {
   z-index: 2;
-  top: 25%;
+  top: 15%;
   left: 25%;
   background-color: white;
   padding: 1pc;
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: 10px;
   min-width: 50%;
   position: absolute;
   margin-bottom: 10%;
@@ -73,4 +73,5 @@ button.add-employee {
 .new-employee {
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
