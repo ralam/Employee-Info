@@ -1,5 +1,18 @@
 <h2>Add an Employee</h2>
 <div class="form-group">
+  <% if (errors.length === 1) { %>
+    <label>Please fix the following errror before resubmitting the form:</label>
+  <% } else if (errors.length > 1) { %>
+    <label>Please fix the following errrors before resubmitting the form:</label>
+  <% } %>
+  <ul class="errors">
+    <% errors.forEach( function(error) {%>
+      <li><%= error %></li>
+    <%})%>
+  </ul>
+</div>
+
+<div class="form-group">
   <label>Birthdate</labe>
   <input
     type="date"

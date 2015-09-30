@@ -75,7 +75,7 @@ EmployeeInfo.Views.EmployeeIndex = Backbone.CompositeView.extend({
     }
     this.resizeWidths();
     this.resizeHeaders();
-    
+
     return this;
   }
 })

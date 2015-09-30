@@ -2,13 +2,21 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
   template: JST['employees/new'],
   tagName: 'form',
 
+  initialize: function () {
+    this.errors = [];
+  },
+
   events: {
     'submit' : 'submit'
   },
 
   render: function () {
-    this.$el.html(this.template({employee: this.model}))
-    console.log(this.model);
+
+    this.$el.html(this.template({
+      employee: this.model,
+      errors: this.errors
+    }))
+
     return this
   },
 
@@ -19,12 +27,19 @@ EmployeeInfo.Views.EmployeeForm = Backbone.View.extend({
 
     this.model.set(formData);
     this.model.save(formData, {
-      success: function(employee) {
+      success: function(employee, response, options) {
+        //On success, add employee to collection and navigate to idex
         this.collection.add(employee);
         Backbone.history.navigate('/index', { trigger: true })
       }.bind(this),
-      error: function (errors, errorText) {
-        this.errors = errorText.responseJSON;
+      error: function (employee, response, options) {
+        //On error, parse JSON errors response and rerender page with errors
+        var errors = response.responseText.split("\"");
+        this.errors = []
+        errors.forEach(function (el, idx) {
+          if (idx % 2 == 1) {this.errors.push(el)}
+        }.bind(this));
+        console.log(this.errors);
         this.render();
       }.bind(this)
     });
