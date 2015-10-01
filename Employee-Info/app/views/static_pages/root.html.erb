@@ -1,4 +1,12 @@
 <div class="content"></div>
 <script type="text/javascript">
-  $(EmployeeInfo.initialize());
+  $(function () {
+    EmployeeInfo.initialize();
+
+    if (window.location.href == "https://employeeinfo2015.herokuapp.com/" || window.location.href == "http://localhost:3000/") {
+      Backbone.history.navigate("index", { trigger: true });
+    }
+  });
+
+
 </script>
